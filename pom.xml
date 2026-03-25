@@ -36,6 +36,8 @@
 		<gravitee-apim.version>4.10.0</gravitee-apim.version>
 		<gravitee-reporter-common.version>2.0.1</gravitee-reporter-common.version>
 		<gravitee-node.version>4.8.9</gravitee-node.version>
+        <jackson.version>2.18.6</jackson.version>
+        <msgpack.version>0.9.11</msgpack.version>
 
         <!-- Property used by the publication job in CI-->
         <publish-folder-path>graviteeio-apim/plugins/reporters</publish-folder-path>
@@ -43,6 +45,18 @@
 
 	<dependencyManagement>
 		<dependencies>
+            <dependency>
+                <groupId>org.msgpack</groupId>
+                <artifactId>msgpack-core</artifactId>
+                <version>${msgpack.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson</groupId>
+                <artifactId>jackson-bom</artifactId>
+                <version>${jackson.version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
 			<!-- Import bom to properly inherit all dependencies -->
 			<dependency>
 				<groupId>io.gravitee.apim</groupId>
